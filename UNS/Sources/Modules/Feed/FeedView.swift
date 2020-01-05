@@ -9,12 +9,22 @@
 import UIKit
 
 class FeedView: UIViewController {
-    var presenter: FeedPresenterViewProtocol!
     
+    // MARK:- Properties
+    let module: FeedModule = FeedModule()
+    var presenter: FeedPresenterViewProtocol!
+    @IBOutlet weak var feedTable: UITableView!
+    
+    // MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.module.build(self)
         self.presenter.start()
     }
+}
+
+extension FeedView: FeedViewPresenterProtocol {
+    
 }
 
 

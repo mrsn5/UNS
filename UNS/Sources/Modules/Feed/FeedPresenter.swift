@@ -7,10 +7,25 @@
 //
 
 import Foundation
+import os.log
 
 class FeedPresenter {
     weak var view: FeedViewPresenterProtocol!
     var interactor: FeedInteractorPresenterProtocol!
     var router: FeedRouterPresenterProtocol!
+    
+}
+
+extension FeedPresenter: FeedPresenterViewProtocol {
+    func start() {
+        os_log("FeedPresenter started", log: .viper, type: .info)
+    }
+}
+
+extension FeedPresenter: FeedPresenterRouterProtocol {
+    
+}
+
+extension FeedPresenter: FeedPresenterInteractorProtocol {
     
 }

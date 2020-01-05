@@ -10,4 +10,9 @@ import Foundation
 
 class FeedInteractor {
     var presenter: FeedPresenterInteractorProtocol!
+    var newsService: NewsService = NewsAPIService()
+}
+
+extension FeedInteractor: FeedInteractorPresenterProtocol {
+    
 }

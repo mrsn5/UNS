@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 // MARK: - router
 protocol FeedRouterPresenterProtocol: class {
@@ -38,22 +39,19 @@ protocol FeedViewPresenterProtocol: class {
 }
 
 // MARK: - module builder
-
 final class FeedModule {
 
-    func build() -> UIViewController {
-        let view = FeedView()
+    func build(_ view: FeedView) {
         let interactor = FeedInteractor()
         let presenter = FeedPresenter()
         let router = FeedRouter()
 
-        view.presenter = presenter as? FeedPresenterViewProtocol
-        presenter.view = view as? FeedViewPresenterProtocol
-        presenter.interactor = interactor as? FeedInteractorPresenterProtocol
-        presenter.router = router as? FeedRouterPresenterProtocol
-        interactor.presenter = presenter as? FeedPresenterInteractorProtocol
-        router.presenter = presenter as? FeedPresenterRouterProtocol
-        
-        return view
+        view.presenter = presenter
+        presenter.view = view
+        presenter.interactor = interactor
+        presenter.router = router
+        interactor.presenter = presenter
+        router.presenter = presenter
+        os_log("FeedModule is configured.", log: .viper, type: .info)
     }
 }

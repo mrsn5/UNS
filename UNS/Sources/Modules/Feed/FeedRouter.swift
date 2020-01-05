@@ -11,3 +11,8 @@ import Foundation
 class FeedRouter {
     var presenter: FeedPresenterRouterProtocol!
 }
+
+
+extension FeedRouter: FeedRouterPresenterProtocol {
+    
+}
