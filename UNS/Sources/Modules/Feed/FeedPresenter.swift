@@ -9,11 +9,10 @@
 import Foundation
 import os.log
 
-class FeedPresenter {
+class FeedPresenter: PresenterProtocol {
     weak var view: FeedViewPresenterProtocol!
     var interactor: FeedInteractorPresenterProtocol!
     var router: FeedRouterPresenterProtocol!
-    
 }
 
 extension FeedPresenter: FeedPresenterViewProtocol {

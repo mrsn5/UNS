@@ -7,24 +7,27 @@
 //
 
 import UIKit
+import os.log
 
-class FeedView: UIViewController {
+class FeedView: UIViewController, ViewProtocol, Storyboarded {
     
     // MARK:- Properties
-    let module: FeedModule = FeedModule()
     var presenter: FeedPresenterViewProtocol!
-    @IBOutlet weak var feedTable: UITableView!
     
     // MARK:- Lifecycle
     override func viewDidLoad() {
+        os_log("FeedView.viewDidLoad()", log: .lifecycle, type: .info)
         super.viewDidLoad()
-        self.module.build(self)
         self.presenter.start()
+        self.view.backgroundColor = UIColor.blue
     }
+    
 }
 
 extension FeedView: FeedViewPresenterProtocol {
-    
+    func setup() {
+        
+    }
 }
 
 

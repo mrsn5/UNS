@@ -10,6 +10,9 @@
 		C33667DF23C2681900915ECD /* OSLog+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33667DE23C2681900915ECD /* OSLog+.swift */; };
 		C33667E223C2682700915ECD /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33667E123C2682700915ECD /* News.swift */; };
 		C33667E523C2682D00915ECD /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33667E423C2682D00915ECD /* NewsService.swift */; };
+		C36E1FE523D0C4C000644439 /* VIPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E1FE423D0C4C000644439 /* VIPER.swift */; };
+		C36E1FE823D1F89800644439 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E1FE723D1F89800644439 /* Storyboarded.swift */; };
+		C36E1FEA23D1FF5100644439 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36E1FE923D1FF5100644439 /* MainTabBarController.swift */; };
 		C3B9BA4423B818340046139C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9BA4323B818340046139C /* AppDelegate.swift */; };
 		C3B9BA4623B818340046139C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9BA4523B818340046139C /* SceneDelegate.swift */; };
 		C3B9BA4B23B818340046139C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3B9BA4923B818340046139C /* Main.storyboard */; };
@@ -26,6 +29,9 @@
 		C33667DE23C2681900915ECD /* OSLog+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OSLog+.swift"; sourceTree = "<group>"; };
 		C33667E123C2682700915ECD /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		C33667E423C2682D00915ECD /* NewsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		C36E1FE423D0C4C000644439 /* VIPER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPER.swift; sourceTree = "<group>"; };
+		C36E1FE723D1F89800644439 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		C36E1FE923D1FF5100644439 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C3B9BA4023B818340046139C /* UNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B9BA4323B818340046139C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3B9BA4523B818340046139C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +81,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		C36E1FE623D0C77300644439 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C36E1FE423D0C4C000644439 /* VIPER.swift */,
+				C36E1FE723D1F89800644439 /* Storyboarded.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		C3B9BA3723B818340046139C = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +131,7 @@
 		C3B9BA5F23B819C60046139C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C36E1FE623D0C77300644439 /* Protocols */,
 				C33667DD23C2681900915ECD /* Configuration */,
 				C3B9BA6123B819E30046139C /* Modules */,
 				C33667E023C2682700915ECD /* Models */,
@@ -128,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				C3B9BA6223B819EB0046139C /* Feed */,
+				C36E1FE923D1FF5100644439 /* MainTabBarController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -222,9 +239,12 @@
 				C33667E223C2682700915ECD /* News.swift in Sources */,
 				C3B9BA4423B818340046139C /* AppDelegate.swift in Sources */,
 				C3B9BA6B23B819F50046139C /* FeedModule.swift in Sources */,
+				C36E1FEA23D1FF5100644439 /* MainTabBarController.swift in Sources */,
 				C3B9BA6923B819F50046139C /* FeedPresenter.swift in Sources */,
 				C33667DF23C2681900915ECD /* OSLog+.swift in Sources */,
+				C36E1FE523D0C4C000644439 /* VIPER.swift in Sources */,
 				C3B9BA4623B818340046139C /* SceneDelegate.swift in Sources */,
+				C36E1FE823D1F89800644439 /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

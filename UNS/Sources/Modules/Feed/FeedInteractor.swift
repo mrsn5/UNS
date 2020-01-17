@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FeedInteractor {
+class FeedInteractor: InteractorProtocol {
     var presenter: FeedPresenterInteractorProtocol!
     var newsService: NewsService = NewsAPIService()
 }

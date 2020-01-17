@@ -13,5 +13,6 @@ extension OSLog {
     private static var subsystem = Bundle.main.bundleIdentifier!
 
     static let viper = OSLog(subsystem: subsystem, category: "viper")
+    static let lifecycle = OSLog(subsystem: subsystem, category: "lifecycle")
     static let service = OSLog(subsystem: subsystem, category: "service")
 }

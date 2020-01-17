@@ -6,10 +6,11 @@
 //  Copyright © 2019 San Byn Nguyen. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class FeedRouter {
-    var presenter: FeedPresenterRouterProtocol!
+class FeedRouter: RouterProtocol {
+    weak var presenter: FeedPresenterRouterProtocol!
+    weak var viewController: UIViewController?
 }
 
 
