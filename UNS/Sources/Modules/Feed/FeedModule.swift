@@ -20,7 +20,7 @@ protocol FeedPresenterRouterProtocol: PresenterRouterProtocol {
 }
 
 protocol FeedPresenterInteractorProtocol: PresenterInteractorProtocol {
-   
+    func presentNews(_ news: [News])
 }
 
 protocol FeedPresenterViewProtocol: PresenterViewProtocol {
@@ -29,12 +29,13 @@ protocol FeedPresenterViewProtocol: PresenterViewProtocol {
 
 // MARK: - interactor
 protocol FeedInteractorPresenterProtocol: InteractorPresenterProtocol {
-    
+    func loadNews()
 }
 
 // MARK: - view
 protocol FeedViewPresenterProtocol: ViewPresenterProtocol {
     func setup()
+    func showNews(_ news: [News])
 }
 
 // MARK: - module builder

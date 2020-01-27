@@ -14,19 +14,29 @@ class FeedView: UIViewController, ViewProtocol, Storyboarded {
     // MARK:- Properties
     var presenter: FeedPresenterViewProtocol!
     
+    @IBOutlet weak var feedTable: UITableView!
+    var feedDelegate = FeedDataSource()
+    
     // MARK:- Lifecycle
     override func viewDidLoad() {
         os_log("FeedView.viewDidLoad()", log: .lifecycle, type: .info)
         super.viewDidLoad()
         self.presenter.start()
-        self.view.backgroundColor = UIColor.blue
+        feedTable.dataSource = feedDelegate
+        feedTable.delegate = feedDelegate
     }
-    
 }
 
 extension FeedView: FeedViewPresenterProtocol {
+    func showNews(_ news: [News]) {
+        feedDelegate.news = news
+        feedTable.reloadData()
+    }
+    
     func setup() {
-        
+        let cellNib = UINib(nibName: "NewsCell", bundle: nil)
+        self.feedTable.register(cellNib, forCellReuseIdentifier: "NewsCell")
+        self.feedTable.reloadData()
     }
 }
 

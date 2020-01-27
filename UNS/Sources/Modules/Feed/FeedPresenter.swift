@@ -18,6 +18,8 @@ class FeedPresenter: PresenterProtocol {
 extension FeedPresenter: FeedPresenterViewProtocol {
     func start() {
         os_log("FeedPresenter started", log: .viper, type: .info)
+        view.setup()
+        interactor.loadNews()
     }
 }
 
@@ -26,5 +28,7 @@ extension FeedPresenter: FeedPresenterRouterProtocol {
 }
 
 extension FeedPresenter: FeedPresenterInteractorProtocol {
-    
+    func presentNews(_ news: [News]) {
+        view.showNews(news)
+    }
 }

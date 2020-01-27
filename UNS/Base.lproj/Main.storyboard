@@ -18,30 +18,91 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="iXa-oY-2Zn"/>
+                        <segue destination="9OC-lE-acX" kind="relationship" relationship="viewControllers" id="BeR-r4-Q5o"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xye-nr-bOr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="325" y="-858"/>
         </scene>
-        <!--Item-->
+        <!--News-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="FeedView" id="BYZ-38-t0r" customClass="FeedView" customModule="UNS" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="37J-v6-DT0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Proto" rowHeight="189" id="1x2-QB-OIW">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="189"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1x2-QB-OIW" id="Xqa-ln-gn1">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="189"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEV-Ft-A3x" customClass="XibView" customModule="UNS" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="189"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="450" id="Bul-es-3du"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="NewsCell"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="JEV-Ft-A3x" secondAttribute="bottom" id="2cw-Lt-8lV"/>
+                                                <constraint firstAttribute="trailing" secondItem="JEV-Ft-A3x" secondAttribute="trailing" id="VqV-h9-03w"/>
+                                                <constraint firstItem="JEV-Ft-A3x" firstAttribute="top" secondItem="Xqa-ln-gn1" secondAttribute="top" id="kQY-rS-xwa"/>
+                                                <constraint firstItem="JEV-Ft-A3x" firstAttribute="leading" secondItem="Xqa-ln-gn1" secondAttribute="leading" id="lWP-O5-wmb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="37J-v6-DT0" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="KNY-nc-D2y"/>
+                            <constraint firstItem="37J-v6-DT0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="M1x-LU-TyU"/>
+                            <constraint firstItem="37J-v6-DT0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bNX-EH-nXz"/>
+                            <constraint firstItem="37J-v6-DT0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="m19-q5-bXg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="news" id="koi-GU-Rvj"/>
+                    <tabBarItem key="tabBarItem" title="News" image="news" id="koi-GU-Rvj"/>
+                    <connections>
+                        <outlet property="feedTable" destination="37J-v6-DT0" id="xow-8R-llj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="-128"/>
+            <point key="canvasLocation" x="-26" y="-129"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="Wfm-K2-PlL">
+            <objects>
+                <viewController id="9OC-lE-acX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kYn-4E-mxU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="sUh-x2-3sH"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="ellipsis" catalog="system" id="llB-ct-HC6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yoJ-5j-EKI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="677" y="-129"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ellipsis" catalog="system" width="64" height="18"/>
         <image name="news" width="30" height="30"/>
     </resources>
 </document>

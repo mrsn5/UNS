@@ -14,5 +14,10 @@ class FeedInteractor: InteractorProtocol {
 }
 
 extension FeedInteractor: FeedInteractorPresenterProtocol {
-    
+    func loadNews() {
+        newsService.loadTopHeadlines { (news) in
+            guard let news = news else {return}
+            self.presenter.presentNews(news)
+        }
+    }
 }
