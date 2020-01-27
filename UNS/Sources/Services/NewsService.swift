@@ -34,6 +34,7 @@ class NewsAPIService: NewsService {
             .validate()
             .responseJSON { response in
                 switch response.result {
+                    
                 case .success(let data):
                     guard let json = JSON(rawValue: data) else { return }
                     var news = [News]()

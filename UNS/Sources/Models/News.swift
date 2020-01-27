@@ -6,8 +6,9 @@
 //  Copyright © 2020 San Byn Nguyen. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import SwiftyJSON
+
 
 class News {
     public let source: String
@@ -30,17 +31,17 @@ class News {
         self.content = content
     }
     
-    private var image: Data?
+    private var image: UIImage?
     
-    func getImage(completion: @escaping (Data) -> ()) {
+    func getImage(completion: @escaping (UIImage?) -> ()) {
         if let image = image {
             completion(image)
         } else {
             DispatchQueue.global(qos: .background).async {
                 if let imageURL = self.imageUrl, let data = try? Data(contentsOf: imageURL) {
-                    self.image = data
+                    self.image = UIImage(data: data)
                     DispatchQueue.main.async {
-                        completion(data)
+                        completion(self.image)
                     }
                 }
             }

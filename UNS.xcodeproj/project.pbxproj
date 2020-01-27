@@ -185,7 +185,6 @@
 				C3B9BA5A23B8187B0046139C /* Assets */,
 				C3B9BA4323B818340046139C /* AppDelegate.swift */,
 				C3B9BA4523B818340046139C /* SceneDelegate.swift */,
-				C3B9BA4C23B818350046139C /* Assets.xcassets */,
 			);
 			path = UNS;
 			sourceTree = "<group>";
@@ -193,6 +192,7 @@
 		C3B9BA5A23B8187B0046139C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				C3B9BA4C23B818350046139C /* Assets.xcassets */,
 				C3AB6E2923D639450021FE71 /* Xib */,
 				C3B9BA4923B818340046139C /* Main.storyboard */,
 				C3B9BA4E23B818350046139C /* LaunchScreen.storyboard */,

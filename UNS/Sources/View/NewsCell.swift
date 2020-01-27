@@ -30,7 +30,7 @@ class NewsCell: UITableViewCell {
         newsTitle.text = news.title
         newsImage.image = nil
         news.getImage { data in
-            self.newsImage.image = UIImage(data: data)
+            self.newsImage.image = data
         }
     }
     
