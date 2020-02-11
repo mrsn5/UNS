@@ -30,7 +30,11 @@ class NewsCell: UITableViewCell {
         newsTitle.text = news.title
         newsImage.image = nil
         news.getImage { data in
-            self.newsImage.image = data
+            if data == nil {
+                self.newsImage.image = UIImage(named: "logo-banner")
+            } else {
+                self.newsImage.image = data
+            }
         }
     }
     

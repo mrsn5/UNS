@@ -40,9 +40,9 @@ class News {
             DispatchQueue.global(qos: .background).async {
                 if let imageURL = self.imageUrl, let data = try? Data(contentsOf: imageURL) {
                     self.image = UIImage(data: data)
-                    DispatchQueue.main.async {
-                        completion(self.image)
-                    }
+                }
+                DispatchQueue.main.async {
+                    completion(self.image)
                 }
             }
         }

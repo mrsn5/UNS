@@ -28,7 +28,7 @@ class NewsAPIService: NewsService {
             return
         }
         
-        AF.request(url,
+        request(url,
                    method: .get,
                    parameters: ["country": "ua", "apiKey": NEWS_API_KEY])
             .validate()
