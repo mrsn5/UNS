@@ -11,7 +11,7 @@ import os.log
 
 // MARK: - router
 protocol FeedRouterPresenterProtocol: RouterPresenterProtocol {
-   
+    func routeArticle(_ news: News)
 }
 
 // MARK: - presenter
@@ -25,6 +25,7 @@ protocol FeedPresenterInteractorProtocol: PresenterInteractorProtocol {
 
 protocol FeedPresenterViewProtocol: PresenterViewProtocol {
     func start()
+    func showArticle(_ news: News)
 }
 
 // MARK: - interactor

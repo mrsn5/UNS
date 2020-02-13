@@ -16,6 +16,10 @@ class FeedPresenter: PresenterProtocol {
 }
 
 extension FeedPresenter: FeedPresenterViewProtocol {
+    func showArticle(_ news: News) {
+        router.routeArticle(news)
+    }
+    
     func start() {
         os_log("FeedPresenter started", log: .viper, type: .info)
         view.setup()

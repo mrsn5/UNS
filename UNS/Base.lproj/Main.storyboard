@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VLv-kb-4m6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VLv-kb-4m6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,9 +100,101 @@
             </objects>
             <point key="canvasLocation" x="677" y="-129"/>
         </scene>
+        <!--Article View-->
+        <scene sceneID="WMD-HB-3w1">
+            <objects>
+                <viewController storyboardIdentifier="ArticleView" id="Jl4-5E-O4P" customClass="ArticleView" customModule="UNS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b01-TG-6bW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-banner" translatesAutoresizingMaskIntoConstraints="NO" id="zCy-Xn-AQA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="310.5"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xIN-uI-cjZ">
+                                <rect key="frame" x="0.0" y="310.5" width="414" height="585.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainTitleCell" rowHeight="116" id="oWd-1t-QRB" customClass="ArticleCell" customModule="UNS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="116"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oWd-1t-QRB" id="Fcm-aE-V5M">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="Main Title! That's very important! Be very vary vary vary long..." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3y-Zw-r5E">
+                                                    <rect key="frame" x="20" y="11" width="374" height="94"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="j3y-Zw-r5E" secondAttribute="bottom" id="8wA-2u-RVj"/>
+                                                <constraint firstItem="j3y-Zw-r5E" firstAttribute="leading" secondItem="Fcm-aE-V5M" secondAttribute="leadingMargin" id="RAw-7Z-udl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="j3y-Zw-r5E" secondAttribute="trailing" id="Zdd-D1-AX0"/>
+                                                <constraint firstItem="j3y-Zw-r5E" firstAttribute="top" secondItem="Fcm-aE-V5M" secondAttribute="topMargin" id="cqY-MK-mQI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="paragraphLabel" destination="j3y-Zw-r5E" id="qWC-Zi-Jzx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParagraphCell" rowHeight="191" id="22j-HB-eJU" customClass="ArticleCell" customModule="UNS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="144" width="414" height="191"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="22j-HB-eJU" id="YWX-TD-o9H">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="191"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmF-AO-S5i">
+                                                    <rect key="frame" x="20" y="11" width="374" height="169"/>
+                                                    <string key="text">Bitcoin IRA, the world's first, largest and most secure digital asset IRA technology platform that allows clients to purchase cryptocurrencies and other digital assets for their retirement accounts, today announced that it has lowered its rates for 2020 based.</string>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YmF-AO-S5i" firstAttribute="leading" secondItem="YWX-TD-o9H" secondAttribute="leadingMargin" id="QKi-O1-GD1"/>
+                                                <constraint firstItem="YmF-AO-S5i" firstAttribute="top" secondItem="YWX-TD-o9H" secondAttribute="topMargin" id="Smj-uS-zC2"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="YmF-AO-S5i" secondAttribute="bottom" id="d61-Vy-3e4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YmF-AO-S5i" secondAttribute="trailing" id="fZ2-ST-IoO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="paragraphLabel" destination="YmF-AO-S5i" id="Qe8-E1-5He"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xIN-uI-cjZ" firstAttribute="leading" secondItem="vbA-MS-lOb" secondAttribute="leading" id="3rO-kR-QIH"/>
+                            <constraint firstAttribute="bottom" secondItem="xIN-uI-cjZ" secondAttribute="bottom" id="4LW-8v-Vhh"/>
+                            <constraint firstItem="zCy-Xn-AQA" firstAttribute="trailing" secondItem="vbA-MS-lOb" secondAttribute="trailing" id="No9-5l-qLb"/>
+                            <constraint firstItem="zCy-Xn-AQA" firstAttribute="height" secondItem="b01-TG-6bW" secondAttribute="width" multiplier="3:4" id="SZo-AX-Hae"/>
+                            <constraint firstItem="zCy-Xn-AQA" firstAttribute="top" secondItem="b01-TG-6bW" secondAttribute="top" id="VDB-bA-IC1"/>
+                            <constraint firstItem="xIN-uI-cjZ" firstAttribute="top" secondItem="zCy-Xn-AQA" secondAttribute="bottom" id="a5N-L5-EW5"/>
+                            <constraint firstItem="zCy-Xn-AQA" firstAttribute="leading" secondItem="vbA-MS-lOb" secondAttribute="leading" id="bhY-cE-qbl"/>
+                            <constraint firstItem="xIN-uI-cjZ" firstAttribute="trailing" secondItem="vbA-MS-lOb" secondAttribute="trailing" id="c19-fA-NUz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vbA-MS-lOb"/>
+                    </view>
+                    <connections>
+                        <outlet property="articleImage" destination="zCy-Xn-AQA" id="1kJ-gZ-bLU"/>
+                        <outlet property="tableView" destination="xIN-uI-cjZ" id="Af8-XD-Zz4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jgn-pw-Vbd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="325" y="551"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ellipsis" catalog="system" width="64" height="18"/>
+        <image name="logo-banner" width="1500" height="500"/>
         <image name="news" width="30" height="30"/>
     </resources>
 </document>

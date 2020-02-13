@@ -11,6 +11,7 @@ import UIKit
 class FeedDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
 
     var news = [News]()
+    weak var view: FeedView?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return news.count
@@ -24,5 +25,10 @@ class FeedDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200.0
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        view?.selectedNews(news[indexPath.row])
     }
 }

@@ -22,9 +22,15 @@ class FeedView: UIViewController, ViewProtocol, Storyboarded {
         os_log("FeedView.viewDidLoad()", log: .lifecycle, type: .info)
         super.viewDidLoad()
         self.presenter.start()
+        feedDelegate.view = self
         feedTable.dataSource = feedDelegate
         feedTable.delegate = feedDelegate
     }
+    
+    func selectedNews(_ news: News) {
+        presenter.showArticle(news)
+    }
+    
 }
 
 extension FeedView: FeedViewPresenterProtocol {

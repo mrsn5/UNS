@@ -15,5 +15,8 @@ class FeedRouter: RouterProtocol {
 
 
 extension FeedRouter: FeedRouterPresenterProtocol {
-    
+    func routeArticle(_ news: News) {
+        let articleView = ArticleModule().build(news)
+        viewController?.present(articleView, animated: true, completion: nil)
+    }
 }

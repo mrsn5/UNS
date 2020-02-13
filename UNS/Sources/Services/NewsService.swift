@@ -29,8 +29,9 @@ class NewsAPIService: NewsService {
         }
         
         request(url,
-                   method: .get,
-                   parameters: ["country": "ua", "apiKey": NEWS_API_KEY])
+               method: .get,
+               parameters: ["country": "ua", "apiKey": NEWS_API_KEY]
+        )
             .validate()
             .responseJSON { response in
                 switch response.result {
@@ -47,11 +48,11 @@ class NewsAPIService: NewsService {
                             url: URL(string: article["url"].stringValue),
                             imageUrl: URL(string: article["urlToImage"].stringValue),
                             publishedAt: article["publishedAt"].date,
-                            content: article["content"].stringValue)
+                            content: article["content"].stringValue.replacingOccurrences(of: "\n\n", with: "\n"))
                         news.append(n)
                     }
+                
                     completion(news)
-                    
                 case .failure(let error):
                     os_log(.error, log: .service, "NewsAPI: {PUBLIC}", error.localizedDescription.description)
                     completion(nil)

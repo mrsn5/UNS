@@ -48,7 +48,7 @@ public protocol Module {
     associatedtype Interactor: InteractorProtocol
     
     func assemble(view: inout View, presenter: inout Presenter, router: inout Router, interactor: inout Interactor)
-    func build() -> View
+//    func build() -> View
 }
 
 public extension Module {
